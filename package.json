@@ -25,9 +25,14 @@
   "dependencies": {
     "@nestjs/common": "^11.0.17",
     "@nestjs/core": "^11.0.1",
+    "@nestjs/mapped-types": "*",
     "@nestjs/platform-express": "^11.1.11",
+    "@nestjs/typeorm": "^11.0.1",
+    "dotenv": "^17.4.2",
     "reflect-metadata": "^0.2.2",
-    "rxjs": "^7.8.1"
+    "rxjs": "^7.8.1",
+    "sqlite3": "5",
+    "typeorm": "^0.3.30"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3.2.0",
@@ -76,7 +81,11 @@
   "pnpm": {
     "onlyBuiltDependencies": [
       "@nestjs/core",
-      "@swc/core"
+      "@swc/core",
+      "sqlite3"
+    ],
+    "ignoredBuiltDependencies": [
+      "sqlite3"
     ]
   }
 }
