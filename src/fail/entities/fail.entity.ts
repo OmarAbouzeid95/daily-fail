@@ -4,9 +4,11 @@ import {
   Generated,
   JoinColumn,
   ManyToOne,
+  OneToMany,
   PrimaryGeneratedColumn,
 } from 'typeorm';
 import { User } from '../../user/entities/user.entity';
+import { Reaction } from '../../reaction/entities/reaction.entity';
 
 @Entity()
 export class Fail {
@@ -26,4 +28,7 @@ export class Fail {
 
   @Column('text')
   content!: string;
+
+  @OneToMany(() => Reaction, (reaction: Reaction) => reaction.fail)
+  reactions!: Reaction[];
 }

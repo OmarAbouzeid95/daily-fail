@@ -3,12 +3,14 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { FailModule } from './fail/fail.module';
 import { UserModule } from './user/user.module';
+import { ReactionModule } from './reaction/reaction.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 
 @Module({
   imports: [
     FailModule,
     UserModule,
+    ReactionModule,
     TypeOrmModule.forRoot({
       type: 'sqlite',
       database: process.env.DATABASE_URL as string,
