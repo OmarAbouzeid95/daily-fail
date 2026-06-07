@@ -1,4 +1,13 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
+import {
+  Controller,
+  Get,
+  Post,
+  Body,
+  Patch,
+  Param,
+  Delete,
+  HttpCode,
+} from '@nestjs/common';
 import { FailService } from './fail.service';
 import { CreateFailDto } from './dto/create-fail.dto';
 import { UpdateFailDto } from './dto/update-fail.dto';
@@ -8,6 +17,7 @@ export class FailController {
   constructor(private readonly failService: FailService) {}
 
   @Post()
+  @HttpCode(201)
   create(@Body() createFailDto: CreateFailDto) {
     return this.failService.create(createFailDto);
   }
